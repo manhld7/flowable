@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+	xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:flowable="http://flowable.org/bpmn" targetNamespace="Examples">
+
+	<process id="helloTask" name="Hello Task Process">
+		<startEvent id="request" />
+		<sequenceFlow id="sayHelloFlow" sourceRef="request"
+			targetRef="sayHello" />
+		<userTask id="sayHello" name="Say hello to everybody"
+			flowable:assignee="kermit" />
+		<sequenceFlow id="terminateFlow" sourceRef="sayHello"
+			targetRef="terminate" />
+		<endEvent id="terminate" />
+	</process>
+
+</definitions>
